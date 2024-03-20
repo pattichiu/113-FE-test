@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.設定 google font 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html{
+            font-size: 20px;
+        }
+        /* :root 可以選擇到 html */
+        :root{
+            font-size: 20px;
+        }
+        /* 為這份文件設定字型 */
+        body{
+            font-family: "微軟正黑體",Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            /* font-family:"Londrina Solid" ; */
+        }
+
+        /* 設定自行家族 */
+        /* 有順序，先使用微軟正黑體，沒有的話再使用 Impact... */
+        .font-style{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            /* 字體大小，px、em、rem */
+            font-size: 30px;
+            /* 設定粗體 */
+            font-weight: bold;
+            /* 設定字體驗大寫，第一個字較大(只能用在英文) */
+            font-variant: small-caps;
+
+            /* 30px/40px 字體大小/行高(斜線不能省略) */
+            font: italic bold 30px/40px 'Arial Narrow Bold', sans-serif;
+        }
+        /* 1. 先自定義字型，需要字型檔 
+        參考https://www.1001fonts.com/handwritten-fonts.html*/
+        @font-face {
+            font-family: "myfont";
+            src: url(./font/Ace\ Records.ttf),url(./font/Adine\ Kirnberg.ttf),url(./font/Antro_Vectra_Bolder.otf),url(./font/waltograph42.otf);
+        }
+
+        /* 2.使用自定義字形 */
+        .font-set{
+            font-family: "myfont";
+            font-size: 50px;
+        }
+
+        /* 2. 使用google-font */
+        .google-font{
+            font-family: "Londrina Solid", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .text-style{
+            font-size: 20px;
+            /* 文字對齊 left、center、right */
+            text-align: center;
+            /* none underline、overline、line-through */
+            text-decoration: underline;
+            /* 縮排 */
+            text-indent: 2rem;
+            /* 文字大小寫轉換 */
+            text-transform: uppercase;
+            /* 文字陰影 
+                水平位移(右+，左-) 垂直位移(下+，上-) 陰影模糊半徑 顏色
+            */
+            text-shadow: 5px 5px 2px rgba(255, 0, 255, 0.5);
+            /* 英文字母、中文字的間隔 */
+            letter-spacing: 5px;
+            /* 單字間隔，必須要空格才會有作用，中文字很難有空格，比較適合英文字 */
+            word-spacing: 1rem;
+            /* 航高，也可以用px、rem、em */
+            line-height: 32px;
+            /* 也可以用數字，表倍數 */
+            line-height: 2;
+        }
+        .multi-text-shadows{
+            font-size: 4rem;
+            text-shadow: 
+            1px 1px 1px rgba(255, 255, 255, 1),
+            2px 2px 2px rgba(255, 255, 0, 1),
+            3px 3px 3px rgba(255, 150, 0, 1),
+            4px 4px 4px rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        1. Font 樣式設定
+    </h1>
+    <p class="font-style">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem et nihil laboriosam voluptatum pariatur tempora eius odit, doloribus itaque eum nemo error rem amet deserunt! Incidunt distinctio debitis ipsum dolorum.
+        螢幕醫生，開關發佈每個人設為不對由於接收，本來廣場她是，窗口出了動漫請求觀眾字體和諧有一親愛的不多，將來裝備工人一場那是普遍很多提出，我在小心考生過去能學到不可以吃了符合鄉民聯繫大幅交友，只需房價求助，一級搜尋引擎千萬表明如下召開究竟走了無比看看共享版網。
+    </p>
+    <p class="font-style">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium incidunt fugiat, necessitatibus ducimus similique doloribus iure, enim laborum porro, ipsum fugit veniam ab harum. Sequi voluptatem voluptate eaque libero ratione?
+    </p>    
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium incidunt fugiat, necessitatibus ducimus similique doloribus iure, enim laborum porro, ipsum fugit veniam ab harum. Sequi voluptatem voluptate eaque libero ratione?
+    </p>
+
+    <hr>
+    <h2>自訂字型</h2>
+    <p class="font-set">Lorem ipsum dolor sit amet consectetur.</p>
+
+    <h2>Google Fonts</h2>  
+    <p class="google-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, omnis.</p>
+
+    <h2>Text 樣式設定</h2>  
+    <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, omnis.</p>
+
+    <h2>多重字陰影</h2>
+    <p class="multi-text-shadows">lorem</p>
+
+    <h1>3. rem 和 em 的差異</h1>
+    <ul>
+        <li>文字預設字體大小為20px，也就是1rem</li>
+        <li>root 指根元素 html，:root </li>
+    </ul>
+    <h2>REM</h2>
+    <p>為 root 預設的 font-size 的倍數，預設 20px</p>
+    <div style="font-size: 1rem;">
+        font
+        <div style="font-size: 2rem;">
+            font
+                <div style="font-size: 3rem;">
+                    font
+                </div>
+        </div>
+    </div>
+
+    <h2>EM</h2>
+    <p>
+        em 可能為父層或祖先層 font-size 的倍數
+        父層有設定字體大小以他為基準，若沒有繼續往外面找，如果有就用，沒有就會一直找到根元素 html，也就是 20px
+    </p>
+    <div style="font-size: 1em;">
+        font
+        <div style="font-size: 2em;">
+            font
+                <div style="font-size: 3em;">
+                    font
+                </div>
+        </div>
+    </div>
+
+</body>
+</html>
